@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use App\Models\PasswordReset;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\Auth\ForgotPasswordFormRequest;
@@ -20,7 +21,7 @@ class ForgotPasswordController extends Controller
             ],
             [
                 'email' => $user->email,
-                'token' => str_random(60)
+                'token' => Str::random(60)
              ]
         );
 
